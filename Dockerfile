@@ -14,4 +14,7 @@ RUN make install PREFIX=/usr
 WORKDIR /
 RUN rm -rf /tmp/zfs-auto-snapshot-master-92db087bb019957166ee70c88c6c967e5fd28a70
 
+# Keep only the daily and hourly schedules
+RUN rm -f /etc/cron.d/zfs-auto-snapshot /etc/cron.monthly/zfs-auto-snapshot /etc/cron.weekly/zfs-auto-snapshot
+
 CMD /usr/sbin/cron -f -l
