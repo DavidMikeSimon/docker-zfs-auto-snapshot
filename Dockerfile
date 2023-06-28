@@ -1,6 +1,6 @@
 FROM ubuntu:23.04
 
-RUN apt update && apt install -y zfsutils-linux cron && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt install -y zfsutils-linux cron tzdata && rm -rf /var/lib/apt/lists/*
 
 # Remove existing builtin ubuntu cron stuff
 RUN rm -rf    /etc/cron.d /etc/cron.hourly /etc/cron.daily /etc/cron.weekly /etc/cron.monthly
